@@ -105,11 +105,11 @@ Here is the student's current code:
 ${context.files[0]}
 </current_code> 
 
-If <assignment> and <current_code> are empty, assume that they're not available. 
-With the available context, follow the guidelines and respond with either the teacher written explanation or your own if it doesn't match any <generalized_errors>
+If <assignment> and <code> are empty, assume that they're not available. 
 
-If generating your own explanation, make sure it is not longer than 2-3 sentences, and double check that it does not suggest any fixes or solutions. 
-The explanation should only describe the cause of the error. Do not tell the student whether or not it matches. Just provide the explanation in either case only.`
+Phrase your explanation directly addressing the student as 'you'. 
+After writing your explanation in 2-3 sentences, double check that it does not suggest any fixes or solutions. 
+The explanation should only describe the cause of the error.`
 
       const result = await codioIDE.coachBot.ask({
         systemPrompt: systemPrompt,

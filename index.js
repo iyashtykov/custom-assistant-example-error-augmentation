@@ -102,7 +102,7 @@ ${context.guidesPage.content}
 Here is the student's current code:
 
 <current_code>
-${context.files[0]}
+${context.files[0]?.content}
 </current_code> 
 
 If <assignment> and <code> are empty, assume that they're not available. 

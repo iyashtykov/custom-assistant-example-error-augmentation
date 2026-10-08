@@ -87,6 +87,7 @@ If it is not a traditional error message, only answer "Yes" if it sounds like it
     }, {stream:false, preventMenu: true})
 
     if (validation_result.result.includes("Yes")) {
+        const currentCode = context.files.map((file) => `<file path="${file.path}">\n${file.content}\n</file>`).join('\n')
         //Define your assistant's userPrompt - this is where you will provide all the context you collected along with the task you want the LLM to generate text for.
         const userPrompt = `Here is the error message:
 
@@ -102,7 +103,7 @@ ${context.guidesPage.content}
 Here is the student's current code:
 
 <current_code>
-${context.files[0]?.content}
+${currentCode}
 </current_code> 
 
 If <assignment> and <code> are empty, assume that they're not available. 
